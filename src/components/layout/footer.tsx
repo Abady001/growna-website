@@ -8,6 +8,10 @@ const footerLinks = {
     { name: "Solutions", href: "/solutions" },
     { name: "Contact", href: "/contact" },
   ],
+  resources: [
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Blog", href: "/blog" },
+  ],
   services: [
     { name: "AI Solutions", href: "/services" },
     { name: "SaaS Products", href: "/services" },
@@ -80,6 +84,22 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
