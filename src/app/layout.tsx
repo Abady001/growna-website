@@ -3,16 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { constructMetadata } from "@/lib";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "GROWNA | Technology & Growth Partner",
-  description: "GROWNA is a technology and growth partner helping growing businesses modernize, automate, and scale with AI solutions, SaaS products, ERP/Odoo, and digital transformation.",
-};
+export const metadata: Metadata = constructMetadata("home");
 
 export default function RootLayout({
   children,
@@ -21,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased bg-background text-foreground`}>
+      <body
+        className={`${inter.variable} antialiased bg-background text-foreground`}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
