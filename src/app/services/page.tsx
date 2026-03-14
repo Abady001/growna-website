@@ -148,7 +148,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-card border-border hover:border-primary/50 transition-colors">
+                <Card className="h-full bg-card border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-background border-border">
+                <Card className="h-full bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-semibold mb-2">{model.title}</h3>
                     <p className="text-sm text-muted-foreground">
@@ -222,14 +222,14 @@ export default function ServicesPage() {
       <Section>
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 text-lg">
               Let&apos;s discuss how our services can help you achieve your business
               goals. We&apos;ll start with a conversation, not a pitch.
             </p>
-            <Button>
+            <Button size="lg" className="text-base px-8">
               <Link href="/contact">
                 Schedule a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -144,7 +144,7 @@ export default function SolutionsPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="h-full bg-card border-border hover:border-primary/50 transition-colors">
+                    <Card className="h-full bg-card border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                       <CardHeader>
                         <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                           <item.icon className="h-6 w-6 text-primary" />
@@ -187,7 +187,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-background border-border">
+                <Card className="h-full bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                   <CardContent className="pt-6">
                     <h3 className="font-semibold mb-2">{cap.title}</h3>
                     <p className="text-sm text-muted-foreground">
@@ -204,14 +204,14 @@ export default function SolutionsPage() {
       <Section>
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Need Something Custom?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 text-lg">
               We build tailored solutions for unique business challenges. Tell us
               about your needs and we&apos;ll help you find the right approach.
             </p>
-            <Button>
+            <Button size="lg" className="text-base px-8">
               <Link href="/contact">
                 Discuss Your Project
                 <ArrowRight className="ml-2 h-4 w-4" />

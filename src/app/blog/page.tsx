@@ -28,7 +28,7 @@ export default function BlogPage() {
               {featuredPosts.map((post) => (
                 <Card
                   key={post.id}
-                  className="bg-card border-border hover:border-primary/50 transition-colors"
+                  className="bg-card border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
                 >
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-3">
@@ -76,7 +76,7 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <Card
                 key={post.id}
-                className="bg-background border-border hover:border-primary/50 transition-colors"
+                className="bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
               >
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-3">
@@ -116,14 +116,14 @@ export default function BlogPage() {
       <Section>
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Subscribe to Our Newsletter
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 text-lg">
               Get the latest insights on technology and business growth delivered
               to your inbox.
             </p>
-            <Button>
+            <Button size="lg" className="text-base px-8">
               <Link href="/contact">
                 Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />

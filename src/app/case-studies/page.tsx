@@ -32,7 +32,7 @@ export default function CaseStudiesPage() {
               return (
                 <Card
                   key={study.id}
-                  className="bg-card border-border hover:border-primary/50 transition-colors"
+                  className="bg-card border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between mb-4">
@@ -91,14 +91,14 @@ export default function CaseStudiesPage() {
       <Section className="bg-card border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Write Your Success Story?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 text-lg">
               Let&apos;s discuss how we can help your business achieve similar
               results through strategic technology implementation.
             </p>
-            <Button>
+            <Button size="lg" className="text-base px-8">
               <Link href="/contact">
                 Start Your Project
                 <ArrowRight className="ml-2 h-4 w-4" />

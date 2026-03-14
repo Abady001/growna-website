@@ -351,7 +351,7 @@ export default async function ServicePage({ params }: Props) {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceData.benefits.map((benefit, index) => (
-              <Card key={index} className="bg-background border-border">
+              <Card key={index} className="bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -389,9 +389,9 @@ export default async function ServicePage({ params }: Props) {
           />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {serviceData.process.map((step, index) => (
-              <Card key={index} className="bg-background border-border">
+              <Card key={index} className="bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                 <CardContent className="pt-6">
-                  <div className="text-2xl font-bold text-primary/20 mb-3">
+                  <div className="text-3xl font-bold text-primary/15 mb-3">
                     0{index + 1}
                   </div>
                   <h3 className="font-semibold mb-2">{step.title}</h3>
@@ -424,7 +424,7 @@ export default async function ServicePage({ params }: Props) {
                   <p className="text-sm text-primary-foreground/80 mb-4">
                     Let&apos;s discuss how we can help your business with {serviceData.title}.
                   </p>
-                  <Button variant="secondary" className="w-full">
+                  <Button variant="secondary" className="w-full" size="lg">
                     <Link href="/contact">
                       Schedule a Call
                       <ArrowRight className="ml-2 h-4 w-4" />
