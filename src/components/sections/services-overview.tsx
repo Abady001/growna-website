@@ -84,7 +84,7 @@ export function ServicesOverview() {
                     {service.description}
                   </p>
                   <Button variant="ghost" size="sm" className="p-0 group-hover:translate-x-1 transition-transform">
-                    <Link href="/services">
+                    <Link href={`/services/${service.id}`}>
                       Learn more
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
