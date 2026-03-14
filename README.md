@@ -101,9 +101,25 @@ src/
 
 ### Vercel (Recommended)
 
-1. Push code to GitHub
-2. Import project in Vercel
-3. Deploy automatically
+1. **Push code to GitHub:**
+   ```bash
+   git push origin master
+   ```
+
+2. **Import project in Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New..." → "Project"
+   - Import your GitHub repository
+
+3. **Configure environment variables:**
+   In Vercel project settings, add:
+   - `NEXT_PUBLIC_SITE_URL` = your production URL (e.g., https://growna.com)
+   - `NEXT_PUBLIC_FORMSPREE_ENDPOINT` = your Formspree form endpoint
+
+4. **Deploy:**
+   - Click "Deploy" - Vercel will automatically build and deploy
+
+**Note:** The contact form requires `NEXT_PUBLIC_FORMSPREE_ENDPOINT` to be set. Get your endpoint from [formspree.io](https://formspree.io) (free tier available).
 
 ### Docker
 
@@ -112,23 +128,44 @@ docker build -t growna .
 docker run -p 3000:3000 growna
 ```
 
-## Environment Variables
+### Self-Hosted
 
-Create `.env.local` for local development:
-
-```env
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```bash
+npm run build
+npm start
 ```
 
-## Future Phases
+## Environment Variables
 
-- Service detail pages
-- Solution detail pages  
+### Required for Production
+
+Create `.env.local` for local development or add in Vercel:
+
+```env
+# Site URL (required for SEO)
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Formspree - Get from https://formspree.io (free tier available)
+NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxx
+```
+
+### Getting Started with Formspree
+
+1. Go to [formspree.io](https://formspree.io) and create a free account
+2. Create a new form for your contact page
+3. Copy the form endpoint (e.g., `https://formspree.io/f/xyzabc`)
+4. Add it as `NEXT_PUBLIC_FORMSPREE_ENDPOINT` in your environment
+
+The form will automatically send submissions to your email and provide a dashboard to manage responses.
+
+## Future Enhancements
+
+- Analytics integration (Plausible or Vercel Analytics)
+- Newsletter signup component
 - Legal pages (Privacy, Terms)
 - Careers page
-- Newsletter signup
-- CMS integration
-- Contact form backend
+- CMS integration for blog/case studies
+- Multi-language support
 
 ## License
 
