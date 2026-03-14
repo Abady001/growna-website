@@ -13,10 +13,12 @@ const footerLinks = {
     { name: "Blog", href: "/blog" },
   ],
   services: [
-    { name: "AI Solutions", href: "/services" },
-    { name: "SaaS Products", href: "/services" },
-    { name: "ERP / Odoo", href: "/services" },
-    { name: "Digital Transformation", href: "/services" },
+    { name: "AI Solutions", href: "/services/ai" },
+    { name: "SaaS Development", href: "/services/saas" },
+    { name: "ERP / Odoo", href: "/services/erp" },
+    { name: "Systems Integration", href: "/services/integration" },
+    { name: "Automation", href: "/services/automation" },
+    { name: "Digital Transformation", href: "/services/dx" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
