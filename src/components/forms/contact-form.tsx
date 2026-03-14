@@ -19,6 +19,8 @@ import {
   Twitter,
   Github,
   CheckCircle2,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 
 const contactMethods = [
@@ -72,10 +74,48 @@ export function ContactForm() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError(null);
+
+    const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+    if (!formspreeEndpoint) {
+      setError("Form submission is not configured. Please contact us directly at hello@growna.com");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          inquiryType: formData.inquiryType,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        const data = await response.json();
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Failed to submit form. Please try again or email us directly.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -117,6 +157,16 @@ export function ContactForm() {
                     </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {error && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="flex items-center gap-2 p-3 rounded-lg bg-destructive/10 text-destructive text-sm"
+                        >
+                          <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                          <span>{error}</span>
+                        </motion.div>
+                      )}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="name">Name *</Label>
@@ -197,9 +247,18 @@ export function ContactForm() {
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full">
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
+                      <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
+                        {isLoading ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2 h-4 w-4" />
+                            Send Message
+                          </>
+                        )}
                       </Button>
 
                       <p className="text-xs text-muted-foreground text-center">
