@@ -44,11 +44,11 @@ const reasons = [
 
 export function WhyGrowna() {
   return (
-    <section className="py-16 md:py-24 bg-card border-y border-border">
+    <section className="py-20 md:py-28 bg-card border-y border-border">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why GROWNA</h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             We&apos;re not just another tech consultancy. We partner with you to build
             lasting solutions that drive real business growth.
           </p>
@@ -62,7 +62,7 @@ export function WhyGrowna() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex gap-4"
+              className="flex gap-4 p-6 rounded-xl hover:bg-primary/5 transition-colors"
             >
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">

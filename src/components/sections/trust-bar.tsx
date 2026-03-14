@@ -28,9 +28,9 @@ const stats = [
 
 export function TrustBar() {
   return (
-    <section className="py-16 md:py-24 bg-card border-y border-border">
+    <section className="py-20 md:py-24 bg-card border-y border-border">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -40,11 +40,11 @@ export function TrustBar() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
-                <stat.icon className="h-6 w-6" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-5">
+                <stat.icon className="h-7 w-7" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
+              <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </div>

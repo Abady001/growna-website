@@ -53,11 +53,11 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <section className="py-16 md:py-24" id="services">
+    <section className="py-20 md:py-28" id="services">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             Comprehensive technology solutions designed to help your business grow,
             scale, and succeed in the digital age.
           </p>
@@ -72,9 +72,9 @@ export function ServicesOverview() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-card border-border hover:border-primary/50 transition-colors">
+              <Card className="h-full bg-card border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold">{service.title}</h3>
@@ -83,7 +83,7 @@ export function ServicesOverview() {
                   <p className="text-muted-foreground text-sm mb-4">
                     {service.description}
                   </p>
-                  <Button variant="ghost" size="sm" className="p-0">
+                  <Button variant="ghost" size="sm" className="p-0 group-hover:translate-x-1 transition-transform">
                     <Link href="/services">
                       Learn more
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -95,8 +95,8 @@ export function ServicesOverview() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button>
+        <div className="text-center mt-16">
+          <Button size="lg">
             <Link href="/services">
               View All Services
               <ArrowRight className="ml-2 h-4 w-4" />

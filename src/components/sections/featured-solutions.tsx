@@ -32,19 +32,19 @@ const solutions = [
 
 export function FeaturedSolutions() {
   return (
-    <section className="py-16 md:py-24 bg-card border-y border-border">
+    <section className="py-20 md:py-28 bg-card border-y border-border">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Featured Solutions
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-lg">
               Tailored solutions that address common business challenges and drive
               measurable outcomes.
             </p>
           </div>
-          <Button variant="outline">
+          <Button variant="outline" size="lg">
             <Link href="/solutions">
               View All Solutions
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -61,9 +61,9 @@ export function FeaturedSolutions() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-background border-border hover:border-primary/50 transition-colors">
+              <Card className="h-full bg-background border-border hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <solution.icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold">{solution.title}</h3>
@@ -72,7 +72,7 @@ export function FeaturedSolutions() {
                   <p className="text-muted-foreground text-sm mb-4">
                     {solution.description}
                   </p>
-                  <Button variant="ghost" size="sm" className="p-0">
+                  <Button variant="ghost" size="sm" className="p-0 group-hover:translate-x-1 transition-transform">
                     <Link href={solution.href}>
                       Learn more
                       <ArrowRight className="ml-2 h-4 w-4" />

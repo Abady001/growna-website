@@ -31,7 +31,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3"
+          ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-sm py-3"
           : "bg-transparent py-5"
       )}
     >
@@ -56,7 +56,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button>
+            <Button size="sm">
               <Link href="/contact">Get Started</Link>
             </Button>
           </div>
